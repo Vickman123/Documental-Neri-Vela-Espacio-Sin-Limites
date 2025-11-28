@@ -1,1 +1,517 @@
-<div>Hola Mundo</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Documental oficial del Dr. Rodolfo Neri Vela, primer astronauta mexicano. Dirigido por Ricardo Arnaiz.">
+  <title>Documental: Rodolfo Neri Vela</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto+Slab:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0B3D91;
+      --secondary: #E60026;
+      --accent: #FFD700;
+      --light: #f9f9f9;
+      --dark: #1a1a1a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--dark);
+      background: #000;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 {
+      font-family: 'Roboto Slab', serif;
+      font-weight: 700;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    /* ——— 1. PORTADA ——— */
+    #portada {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #000428, #004e92);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #portada::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: 
+        radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+        radial-gradient(2px 2px at 80% 20%, #fff, transparent),
+        radial-gradient(1px 1px at 40% 70%, #ccc, transparent);
+      opacity: 0.5;
+    }
+
+    .portada-title {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: 20px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    }
+
+    .portada-sub {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      opacity: 0.9;
+    }
+
+    .portada-credits {
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    /* ——— 2. TIEMPO FALTANTE ——— */
+    #tiempo-faltante {
+      background: linear-gradient(to right, var(--primary), #002244);
+      color: white;
+      text-align: center;
+    }
+
+    .countdown-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .countdown-item {
+      background: rgba(255,255,255,0.1);
+      padding: 25px 15px;
+      min-width: 130px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+    }
+
+    .countdown-number {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .countdown-label {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ——— 3. COMUNIDADES Y ALIADOS ——— */
+    #comunidades {
+      background: #0a0a0a;
+      color: white;
+      text-align: center;
+    }
+
+    .aliados-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .aliado {
+      opacity: 0.7;
+      transition: all 0.3s;
+      max-width: 180px;
+    }
+
+    .aliado:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .aliado img {
+      max-width: 100%;
+      filter: grayscale(100%);
+      transition: filter 0.3s;
+    }
+
+    .aliado:hover img {
+      filter: grayscale(0);
+    }
+
+    /* ——— 4. TRAILER ——— */
+    #trailer {
+      background: #111;
+      text-align: center;
+    }
+
+    .trailer-box {
+      max-width: 900px;
+      margin: 40px auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .trailer-placeholder {
+      height: 0;
+      padding-bottom: 56.25%;
+      background: linear-gradient(45deg, var(--primary), #0d2b5e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .play-btn {
+      width: 70px;
+      height: 70px;
+      background: var(--secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.4rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    }
+
+    /* ——— 5. REDES SOCIALES Y VIDEOS ——— */
+    #redes {
+      background: #000;
+      color: white;
+    }
+
+    .redes-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .video-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 20px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .video-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #2d3748;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .social-feed {
+      background: rgba(255,255,255,0.05);
+      padding: 25px;
+      border-radius: 12px;
+      height: fit-content;
+    }
+
+    .social-item {
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .social-item:last-child {
+      border-bottom: none;
+    }
+
+    .social-platform {
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    /* ——— 6. REGISTRO EMAIL ——— */
+    #registro {
+      background: linear-gradient(to bottom, var(--primary), #001f4d);
+      color: white;
+      text-align: center;
+    }
+
+    .registro-form {
+      max-width: 500px;
+      margin: 40px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .registro-input {
+      padding: 16px 20px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+
+    .registro-btn {
+      background: var(--secondary);
+      color: white;
+      border: none;
+      padding: 16px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .registro-btn:hover {
+      background: #cc0020;
+      transform: translateY(-3px);
+    }
+
+    .incentivos {
+      margin-top: 30px;
+      font-size: 0.95rem;
+    }
+
+    .incentivos li {
+      margin: 10px 0;
+    }
+
+    .incentivos li::before {
+      content: "✨ ";
+      color: var(--accent);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    [data-aos] {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .redes-content {
+        grid-template-columns: 1fr;
+      }
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. PORTADA -->
+  <section id="portada">
+    <h1 class="portada-title">Más Allá de la Órbita</h1>
+    <p class="portada-sub">El documental oficial del Dr. Rodolfo Neri Vela, primer astronauta mexicano.</p>
+    <p class="portada-credits">Dirigido por <strong>Ricardo Arnaiz</strong></p>
+  </section>
+
+  <!-- 2. TIEMPO FALTANTE -->
+  <section id="tiempo-faltante">
+    <div class="container">
+      <h2>⏰ Tiempo faltante para el estreno</h2>
+      <p style="font-size:1.2rem; margin:20px 0;">15 de diciembre de 2025</p>
+      <div class="countdown-grid" id="countdown-grid">
+        <!-- Llenado por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. COMUNIDADES Y ALIADOS -->
+  <section id="comunidades">
+    <div class="container">
+      <h2>🌟 Comunidades y Aliados</h2>
+      <p style="max-width:700px; margin:20px auto; font-size:1.1rem;">Gracias al apoyo de instituciones, comunidades y organizaciones comprometidas con la ciencia y el orgullo nacional.</p>
+      <div class="aliados-grid">
+        <div class="aliado">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/NASA_logo.svg/1200px-NASA_logo.svg.png" alt="NASA" style="height:60px;">
+        </div>
+        <div class="aliado">
+          <img src="https://www.gob.mx/cms/uploads/article/main_image/101829/Agencia_Espacial_Mexicana_logo.png" alt="AEM" style="height:60px;">
+        </div>
+        <div class="aliado">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="Google" style="height:60px;">
+        </div>
+        <div class="aliado">
+          <img src="https://www.upiicsa.ipn.mx/images/logos/logo-ipn-blanco.png" alt="UPIICSA" style="height:60px;">
+        </div>
+        <div class="aliado">
+          <span style="color:var(--accent); font-size:1.2rem; font-weight:600;">SPACE UPIICSA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. TRAILER -->
+  <section id="trailer">
+    <div class="container">
+      <h2>🎬 Trailer Oficial</h2>
+      <div class="trailer-box">
+        <div class="trailer-placeholder" id="play-trailer">
+          <div class="play-btn">▶</div>
+        </div>
+      </div>
+      <p style="margin-top:20px;">
+        <strong>¡Ayúdanos a llegar a 500,000 interacciones en diciembre!</strong><br>
+        Comparte el trailer y genera orgullo nacional.
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. REDES SOCIALES Y VIDEOS -->
+  <section id="redes">
+    <div class="container">
+      <h2>📱 Redes Sociales y Videos</h2>
+      <div class="redes-content">
+        <div>
+          <h3>Videos Destacados</h3>
+          <div class="videos-grid">
+            <div class="video-card">
+              <div class="video-thumb">STS-61-B: La Misión</div>
+              <h4>El viaje histórico (1985)</h4>
+            </div>
+            <div class="video-card">
+              <div class="video-thumb">Entrevista: Dr. Neri Vela</div>
+              <h4>“El espacio no tiene fronteras”</h4>
+            </div>
+            <div class="video-card">
+              <div class="video-thumb">Ricardo Arnaiz</div>
+              <h4>¿Por qué este documental?</h4>
+            </div>
+            <div class="video-card">
+              <div class="video-thumb">Detrás de cámaras</div>
+              <h4>Grabación en el IPN</h4>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>Últimos en redes</h3>
+          <div class="social-feed">
+            <div class="social-item">
+              <div class="social-platform">𝕏 @DocumentalNeriVela</div>
+              <p>¡Ya somos 120,000 seguidores! ¿Nos ayudas a llegar a 200,000? 🚀 #MéxicoEspacial</p>
+            </div>
+            <div class="social-item">
+              <div class="social-platform">Instagram</div>
+              <p>Nuevo reel: “3 datos que no sabías del Dr. Neri Vela” ▶️ ¡Mira el video en bio!</p>
+            </div>
+            <div class="social-item">
+              <div class="social-platform">YouTube</div>
+              <p>Trailer teaser ya disponible. ¡Activa las notificaciones! 🔔</p>
+            </div>
+            <div style="margin-top:20px;">
+              <a href="#" style="color:var(--accent); text-decoration:underline;">Ver más en redes →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. REGISTRO EMAIL -->
+  <section id="registro">
+    <div class="container">
+      <h2>📩 Regístrate para más</h2>
+      <p style="font-size:1.2rem; max-width:700px; margin:0 auto 30px;">
+        Recibe acceso anticipado, notificaciones de estreno, dinámicas exclusivas y recursos educativos.
+      </p>
+      <form class="registro-form" id="registro-form">
+        <input type="text" class="registro-input" placeholder="Tu nombre" required>
+        <input type="email" class="registro-input" placeholder="Tu correo electrónico" required>
+        <button type="submit" class="registro-btn">✅ ¡Quiero participar!</button>
+      </form>
+      <ul class="incentivos">
+        <li>Acceso 48h antes del estreno mundial</li>
+        <li>Invitación al evento virtual con el Dr. Neri Vela</li>
+        <li>Kit educativo: “Mi primer cohete” (PDF)</li>
+        <li>Participa en dinámicas para ganar merch oficial</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer style="background:#000; color:#888; text-align:center; padding:30px 0; font-size:0.9rem;">
+    © 2025 Documental “Más Allá de la Órbita” • Hecho con orgullo en México 🇲🇽<br>
+    Desarrollo web: <a href="https://victormanuel.dev" style="color:var(--accent);">Victor Carreño</a>
+  </footer>
+
+  <script>
+    // Countdown
+    function updateCountdown() {
+      const launch = new Date('December 15, 2025 18:00:00 -0600').getTime();
+      const now = new Date().getTime();
+      const diff = launch - now;
+
+      if (diff <= 0) {
+        document.getElementById('countdown-grid').innerHTML = '<p style="font-size:1.5rem;">¡ESTRENADO! 🎉</p>';
+        return;
+      }
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('countdown-grid').innerHTML = `
+        <div class="countdown-item"><div class="countdown-number">${d}</div><div>Días</div></div>
+        <div class="countdown-item"><div class="countdown-number">${h}</div><div>Horas</div></div>
+        <div class="countdown-item"><div class="countdown-number">${m}</div><div>Minutos</div></div>
+        <div class="countdown-item"><div class="countdown-number">${s}</div><div>Segundos</div></div>
+      `;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Form
+    document.getElementById('registro-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const name = e.target[0].value;
+      alert(`¡Gracias, ${name}! 🎉\nTe avisaremos con novedades y acceso exclusivo.\n\n👉 ¡No olvides compartir el documental! Necesitamos 500,000 interacciones.`);
+      e.target.reset();
+    });
+
+    // Trailer mock
+    document.getElementById('play-trailer').onclick = () => {
+      alert('🎬 Trailer oficial pronto.\nMientras tanto: ¡comparte y ayuda a llegar a 500,000 interacciones!');
+    };
+  </script>
+
+</body>
+</html>
+
