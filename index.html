@@ -3,408 +3,407 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Neri Vela: Espacio sin Límites</title>
-  <!-- Estilos de la animación de carga -->
+  <title>Neri Vela: Espacio Sin Límites</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe UI:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="/css/intro.css">
-  <!-- Estilos del sitio principal (hero, secciones...) -->
   <link rel="stylesheet" href="/css/main.css">
-  <!-- Favicon...) -->
-  <link rel="icon" href="/img/favicon-32x32.png" type="image/png">
-  <!-- Letra Neon...) -->
-<link href="https://fonts.googleapis.com/css2?family=Lato :wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- 🌌 ANIMACIÓN DE CARGA (SOLO AL INICIO) -->
+  <!-- 🌌 ANIMACIÓN DE CARGA -->
   <div id="intro-loader" class="intro-loader">
     <div class="stars"></div>
     <div class="loader-container">
-      <img 
-        src="/img/Atlantis.png" 
-        alt="Transbordador Atlantis lanzándose"
-        class="shuttle"
-        id="shuttle"
-      />
+      <img src="/img/Atlantis.png" alt="Transbordador Atlantis" class="shuttle" id="shuttle">
       <div class="motion-lines"></div>
-      <div class="loading-text">Despegue Mision STS-61-B</div>
+      <div class="loading-text">misión STS-61-B • despegue en curso…</div>
     </div>
   </div>
 
-  <!-- 🌍 CONTENIDO PRINCIPAL (oculto al inicio, se revela después de la intro) -->
+  <!-- 🌍 CONTENIDO PRINCIPAL -->
   <main id="main-content" class="hidden">
 
-<!-- 🚀 HERO MEJORADO — NEÓN + TRANSPORTE ESPACIAL -->
-<section id="hero" class="hero-section">
-  <div class="hero-container">
-    <!-- Texto con neón -->
-    <div class="hero-text">
-      <h1>Neri Vela:<br>Espacio Sin Límites</h1>
-      <p>
-        El documental oficial sobre la vida, misión y legado del Dr. Rodolfo Neri Vela — 
-        primer astronauta mexicano.
-      </p>
-      <p class="director">
-        Dirigido por <span class="highlight">Ricardo Arnaiz</span> · 
-        Con el testimonio exclusivo del Dr. Neri Vela
-      </p>
-    </div>
+    <!-- 🚀 HERO -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        <div class="hero-text">
+          <h1>Neri Vela:<br>Espacio Sin Límites</h1>
+          <p>El documental oficial sobre la vida, misión y legado del Dr. Rodolfo Neri Vela — primer astronauta mexicano.</p>
+          <p class="director">Dirigido por <span class="highlight">Ricardo Arnaiz</span> · Con el testimonio exclusivo del Dr. Neri Vela</p>
+        </div>
+        <img src="/img/Cabina.png" alt="Cabina del transbordador espacial Atlantis" class="hero-shuttle">
+      </div>
+    </section>
 
-<img 
-  src="/img/Cabina.png" 
-  alt="Cabina del transbordador espacial Atlantis" 
-  class="hero-shuttle"
->
-  </div>
-</section>
-
-<!-- ===== SECCIÓN DE SINOPSIS (entre Hero y Aliados) ===== -->
-<section class="synopsis-section" style="
-  width: 100%;
-  padding: 60px 20px;
-  background: #fff;
-  text-align: center;
-  box-sizing: border-box;
-">
-  <h2 style="
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #003366;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  ">Sinopsis</h2>
-
-  <p style="
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: #333;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 15px;
-    text-align: justify;
-    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
-  ">
-    En noviembre de 1985, Rodolfo Neri Vela hizo historia al convertirse en el <strong>primer astronauta mexicano y el primer latinoamericano en participar en una misión de la NASA</strong>: la STS-61-B a bordo del transbordador <em>Atlantis</em>. Durante siete días en órbita, orbitó la Tierra 108 veces, operó el brazo robótico Canadarm y realizó experimentos clave en microgravedad —pero su mayor logro no fue estar en el espacio, sino regresar con una misión más ambiciosa: sembrar las bases para que México y América Latina nunca más fueran espectadores del futuro espacial. Este documental celebra su legado no solo como pionero, sino como educador, científico y visionario que dedicó décadas a construir instituciones, formar talento y recordarnos que la exploración espacial no es un privilegio de unos pocos, sino un derecho de todos los que se preparan, sirven y sueñan con los pies en la tierra y la mirada en las estrellas.
-  </p>
-</section>
-
-<!-- 🤝 ALIADOS — Slider infinito con pausa en hover -->
-<section id="aliados" class="section">
+<!-- ===== SECCIÓN: SINOPSIS / CONTENIDO DESTACADO (3 COLUMNAS) ===== -->
+<section class="synopsis-section" id="sinopsis">
   <div class="container">
-    <h2>Nuestros Aliados</h2>
-    <div class="slider">
-      <div class="slide-track" id="aliados-slider">
-        <!-- Primera vuelta -->
-        <div class="slide"><a href="https://www.upiicsa.ipn.mx  " target="_blank"><img src="/img/logos/upiicsa.png" alt="UPIICSA"></a></div>
-        <div class="slide"><a href="https://spacetechlabs.org  " target="_blank"><img src="/img/logos/spacetechlabs.png" alt="SPACE TECH LABS"></a></div>
-        <div class="slide"><a href="https://www.aem.gob.mx  " target="_blank"><img src="/img/logos/aem.png" alt="Agencia Espacial Mexicana"></a></div>
-        <div class="slide"><a href="https://www.nasa.gov  " target="_blank"><img src="/img/logos/nasa.png" alt="NASA"></a></div>
-        <div class="slide"><a href="https://www.guerrero.gob.mx  " target="_blank"><img src="/img/logos/guerrero.png" alt="Gobierno de Guerrero"></a></div>
-        
-        <!-- Segunda vuelta (para continuidad infinita) -->
-        <div class="slide"><a href="https://www.upiicsa.ipn.mx  " target="_blank"><img src="/img/logos/upiicsa.png" alt="UPIICSA"></a></div>
-        <div class="slide"><a href="https://spacetechlabs.org  " target="_blank"><img src="/img/logos/spacetechlabs.png" alt="SPACE TECH LABS"></a></div>
-        <div class="slide"><a href="https://www.aem.gob.mx  " target="_blank"><img src="/img/logos/aem.png" alt="Agencia Espacial Mexicana"></a></div>
-        <div class="slide"><a href="https://www.nasa.gov  " target="_blank"><img src="/img/logos/nasa.png" alt="NASA"></a></div>
-        <div class="slide"><a href="https://www.guerrero.gob.mx  " target="_blank"><img src="/img/logos/guerrero.png" alt="Gobierno de Guerrero"></a></div>
+    <div class="synopsis-grid">
+      <!-- COLUMNA 1: POSTER Y ETIQUETAS -->
+      <div class="poster-column">
+        <div class="poster-card" id="posterCard">
+          <div class="poster-wrapper">
+            <img 
+              src="/img/Poster.jpg" 
+              alt="Poster oficial del documental Rodolfo Neri Vela: Espacio sin Límites"
+              class="poster-img"
+              loading="lazy"
+            />
+            <div class="poster-overlay"></div>
+            <div class="poster-border"></div>
+          </div>
+          <div class="genres">
+            <span class="genre-tag">Documental</span>
+            <span class="genre-tag">Espacio</span>
+            <span class="genre-tag">Historia</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUMNA 2: SINOPSIS (TÍTULO + TEXTO + QUOTE) -->
+      <div class="synopsis-column">
+        <h1 class="highlight-title">Sinopsis</h1>
+        <p class="subtitle">Videos y materiales creados por nuestros Aliados y Divulgadores Oficiales</p>
+
+        <article>
+          <p class="synopsis-text">
+            Próximamente en cines y plataformas digitales: <strong>Neri Vela: Espacio Sin Límites</strong> — un largometraje documental que explora la vida del Dr. Rodolfo Neri Vela, el primer astronauta mexicano y latinoamericano en viajar al espacio. A través de entrevistas inéditas, archivos históricos y testimonios de quienes lo conocieron, descubriremos por qué eligió el camino de la ciencia, cómo enfrentó los desafíos de ser pionero en un campo dominado por otros países, y cómo su misión en la NASA STS-61-B en 1985 fue solo el comienzo de una carrera dedicada a sembrar las semillas del futuro espacial de México.
+          </p>
+
+          <p class="synopsis-secondary">
+            Este documental no solo celebra su logro como astronauta, sino como educador, científico y visionario que dedicó décadas a construir instituciones, formar talento y recordarnos que la exploración espacial no es un privilegio de unos pocos, sino un derecho de todos los que se preparan, sirven y sueñan con los pies en la tierra y la mirada en las estrellas. 
+          </p>
+
+        </article>
+      </div>
+
+      <!-- COLUMNA 3: DATOS TÉCNICOS + PUNTUACIÓN -->
+      <div class="info-column">
+        <!-- DATOS TÉCNICOS -->
+        <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(6, 16, 40, 0.3); border-radius: 8px; border-left: 3px solid var(--neon-blue);">
+          <p style="font-size: 0.95rem; color: #a0b0d0; margin: 0.5rem 0;">
+            <strong>Director:</strong> Ricardo Arnaiz<br>
+            <strong>Reparto:</strong> Rodolfo Neri Vela, Bruno Bichir, entrevistas exclusivas con científicos y estudiantes mexicanos.<br>
+            <strong>Duración:</strong> 80 minutos<br>
+            <strong>Género:</strong> Documental / Biográfico / Ciencia<br>
+            <strong>Clasificación:</strong> Apta para todo público<br>
+            <strong>Estreno:</strong> Próximamente — Disponible en cines y plataformas digitales.
+          </p>
+        </div>
+
+        <!-- PUNTUACIÓN -->
+          <blockquote>
+            "No fui yo quien eligió el espacio. Fue el espacio quien me eligió... y desde entonces, mi misión ha sido abrirle la puerta a otros."
+          </blockquote>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 📣 DIVULGADORES OFICIALES — Carousel con tarjetas flip -->
-<section id="divulgadores" class="section">
-  <div class="container">
-    <h2 class="section-title">🌟 Divulgadores Oficiales</h2>
-    <div class="carousel-container" id="divulgadores-carousel">
-
-      <!-- Tarjeta 1: Victor Carreño -->
-      <div class="flip-card-container">
-        <div class="flip-card">
-          <div class="flip-card-front">
-            <img src="https://i.pravatar.cc/300?u=victorcarreno" alt="Victor Carreño">
-            <div class="label">
-              Victor Carreño<br><small>Desarrollador Web</small>
-            </div>
+    <!-- 🤝 ALIADOS -->
+    <section id="aliados" class="section">
+      <div class="container">
+        <h2 class="highlight-title">Nuestros Aliados</h2>
+        <div class="slider">
+          <div class="slide-track" id="aliados-slider">
+            <div class="slide"><a href="#" target="_blank"><img src="/img/logos/NASA SPACE APPS GUERRERO.jpg" alt="NASA SPACE APPS GUERRERO"></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="/img/logos/LATINARADIO.jpg" alt="Latina Radio"></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="/img/logos/1000199183.jpg" alt="Hugo San"></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="/img/logos/Techy Events.jpg" alt="Techy Events Community"></a></div>            
+            <div class="slide"><a href="#" target="_blank"><img src="/img/logos//CLUBASTROFOTO.jpg" alt="Agencia Espacial Mexicana"></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="/img/logos/MAUNGLISH.jpg" alt="Maunglish"></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="/img/logos/MAUSPACE.jpg" alt="MauSpace "></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="/img/logos/SociedadAD.jpg" alt="Sociedad Astronomica Digital"></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="/img/logos/Spaceeducationlbl.jpg" alt="Space Educacion"></a></div>
+            <div class="slide"><a href="#" target="_blank"><img src="/img/logos/MAUSITES.jpg" alt="MAUSITE"></a></div>
           </div>
-          <div class="flip-card-back">
-            <div class="back-content">
-              <div>
-                <div class="name">Victor Carreño</div>
-                <p class="description">
-                  Fundador de SPACE UPIICSA y SPACE TECH LABS. Creador del sitio web del primer astronauta mexicano. Apasionado por la informática espacial.
-                </p>
-              </div>
-              <div class="socials-container">
-                <a href="https://instagram.com/vickman123" target="_blank" class="socialContainer containerOne">
-                  <svg class="socialSvg" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
-                </a>
-                <a href="https://twitter.com/vickman123" target="_blank" class="socialContainer containerTwo">
-                  <svg class="socialSvg" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg>
-                </a>
-                <a href="https://linkedin.com/in/victorcarreno" target="_blank" class="socialContainer containerThree">
-                  <svg class="socialSvg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
-                </a>
-                <a href="https://wa.me/5215583294642" target="_blank" class="socialContainer containerFour">
-                  <svg class="socialSvg" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.853 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        </div> 
       </div>
+    </section>
 
-      <!-- Tarjeta 2: Karla Calleja -->
-      <div class="flip-card-container">
-        <div class="flip-card">
-          <div class="flip-card-front">
-            <img src="https://i.pravatar.cc/300?u=karlacalleja" alt="Karla Calleja">
-            <div class="label">
-              Karla Calleja<br><small>SEO & Ciberseguridad</small>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <div class="back-content">
-              <div>
-                <div class="name">Karla Calleja</div>
-                <p class="description">
-                  Experta en optimización para motores de búsqueda y seguridad digital aplicada al ámbito espacial. Colaboradora en proyectos educativos de divulgación científica.
-                </p>
+    <!-- 📣 DIVULGADORES OFICIALES -->
+    <section id="divulgadores" class="section">
+      <div class="container">
+        <h2 class="highlight-title">Divulgadores Oficiales</h2>
+        <div class="carousel-container" id="divulgadores-carousel">
+          <!-- Tarjeta 1: HUGO SAN -->
+          <div class="flip-card-container">
+            <div class="flip-card">
+              <div class="flip-card-front">
+                <img src="/img/divulgadores/HugoSan.jpg" alt="Victor Carreño">
+                <div class="label">
+                  Hugo Salas Aguilar<br><small>Divulgador Cientifico</small>
+                </div>
               </div>
-              <div class="socials-container">
-                <a href="https://instagram.com/karla.calleja" target="_blank" class="socialContainer containerOne">
-                  <svg class="socialSvg" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
-                </a>
-                <a href="https://twitter.com/karla_calleja" target="_blank" class="socialContainer containerTwo">
-                  <svg class="socialSvg" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg>
-                </a>
-                <a href="https://linkedin.com/in/karla-calleja" target="_blank" class="socialContainer containerThree">
-                  <svg class="socialSvg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
-                </a>
-                <a href="https://wa.me/5215583294643" target="_blank" class="socialContainer containerFour">
-                  <svg class="socialSvg" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.853 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
-                </a>
+              <div class="flip-card-back">
+                <div class="back-content">
+                  <div>
+                    <div class="name">Hugo Salas Aguilar</div>
+                    <p class="description">
+                      Fundador de SPACE UPIICSA y SPACE TECH LABS. Creador del sitio web del primer astronauta mexicano. Apasionado por la informática espacial.
+                    </p>
+                  </div>
+                  <div class="socials-container">
+                    <a href="https://instagram.com/vickman123" target="_blank" class="socialContainer containerOne">
+                      <svg class="socialSvg" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+                    </a>
+                    <a href="https://twitter.com/vickman123" target="_blank" class="socialContainer containerTwo">
+                      <svg class="socialSvg" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/victorcarreno" target="_blank" class="socialContainer containerThree">
+                      <svg class="socialSvg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                    </a>
+                    <a href="https://wa.me/5215583294642" target="_blank" class="socialContainer containerFour">
+                      <svg class="socialSvg" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.853 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Tarjeta 3: Dr. Rodolfo Neri Vela -->
-      <div class="flip-card-container">
-        <div class="flip-card">
-          <div class="flip-card-front">
-            <img src="https://i.pravatar.cc/300?u=nerivela" alt="Dr. Rodolfo Neri Vela">
-            <div class="label">
-              Dr. Rodolfo Neri Vela<br><small>Astronauta Mexicano</small>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <div class="back-content">
-              <div>
-                <div class="name">Dr. Rodolfo Neri Vela</div>
-                <p class="description">
-                  Primer astronauta mexicano. Profesor e investigador en la UNAM. Embajador de la ciencia y la exploración espacial en México.
-                </p>
+          <!-- Tarjeta 2: Karla Calleja -->
+          <div class="flip-card-container">
+            <div class="flip-card">
+              <div class="flip-card-front">
+                <img src="/img/divulgadores/Mauricio.jpg" alt="Karla Calleja">
+                <div class="label">
+                  Mauricio Perez Robles,<br><small>Divulgador Cientifico</small>
+                </div>
               </div>
-              <div class="socials-container">
-                <a href="https://instagram.com/nerivela" target="_blank" class="socialContainer containerOne">
-                  <svg class="socialSvg" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
-                </a>
-                <a href="https://twitter.com/nerivela" target="_blank" class="socialContainer containerTwo">
-                  <svg class="socialSvg" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg>
-                </a>
-                <a href="https://linkedin.com/in/rodolfo-neri-vela" target="_blank" class="socialContainer containerThree">
-                  <svg class="socialSvg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
-                </a>
-                <a href="https://wa.me/5215583294644" target="_blank" class="socialContainer containerFour">
-                  <svg class="socialSvg" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.853 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
-                </a>
+              <div class="flip-card-back">
+                <div class="back-content">
+                  <div>
+                    <div class="name">Karla Calleja</div>
+                    <p class="description">
+                      Experta en optimización para motores de búsqueda y seguridad digital aplicada al ámbito espacial. Colaboradora en proyectos educativos de divulgación científica.
+                    </p>
+                  </div>
+                  <div class="socials-container">
+                    <a href="https://instagram.com/karla.calleja" target="_blank" class="socialContainer containerOne">
+                      <svg class="socialSvg" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+                    </a>
+                    <a href="https://twitter.com/karla_calleja" target="_blank" class="socialContainer containerTwo">
+                      <svg class="socialSvg" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/karla-calleja" target="_blank" class="socialContainer containerThree">
+                      <svg class="socialSvg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                    </a>
+                    <a href="https://wa.me/5215583294643" target="_blank" class="socialContainer containerFour">
+                      <svg class="socialSvg" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.853 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: Dr. Rodolfo Neri Vela -->
+          <div class="flip-card-container">
+            <div class="flip-card">
+              <div class="flip-card-front">
+                <img src="/img/divulgadores/Dulce.png" alt="Dr. Rodolfo Neri Vela">
+                <div class="label">
+                  Dr. Rodolfo Neri Vela<br><small>Astronauta Mexicano</small>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <div class="back-content">
+                  <div>
+                    <div class="name">Dr. Rodolfo Neri Vela</div>
+                    <p class="description">
+                      Primer astronauta mexicano. Profesor e investigador en la UNAM. Embajador de la ciencia y la exploración espacial en México.
+                    </p>
+                  </div>
+                  <div class="socials-container">
+                    <a href="https://instagram.com/nerivela" target="_blank" class="socialContainer containerOne">
+                      <svg class="socialSvg" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+                    </a>
+                    <a href="https://twitter.com/nerivela" target="_blank" class="socialContainer containerTwo">
+                      <svg class="socialSvg" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/rodolfo-neri-vela" target="_blank" class="socialContainer containerThree">
+                      <svg class="socialSvg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                    </a>
+                    <a href="https://wa.me/5215583294644" target="_blank" class="socialContainer containerFour">
+                      <svg class="socialSvg" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.853 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <!-- 📺 CONTENIDO DESTACADO -->
+    <section id="contenido" class="content-showcase">
+      <div class="container">
+        <h2 class="section-title neon-blue">Contenido Destacado</h2>
+        <p class="section-subtitle">Videos y materiales creados por nuestros <strong>Aliados y Divulgadores Oficiales</strong></p>
 
-<!-- 📺 CONTENIDO DESTACADO — Aliados y Divulgadores -->
-<section id="contenido" class="content-showcase">
-  <div class="container">
-    <h2 class="section-title neon-blue">Contenido Destacado</h2>
-    <p class="section-subtitle">
-      Videos y materiales creados por nuestros <strong>Aliados y Divulgadores Oficiales</strong>
-    </p>
+        <div class="carousel-wrapper">
+          <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Tarjetas dinámicas -->
+            <div class="card">
+              <div class="card-media">
+                <img src="https://placehold.co/360x200/0a192f/00f7ff?text=Video+1" alt="Entrevista con el Dr. Neri Vela">
+                <div class="play-overlay">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>Entrevista con el Dr. Neri Vela</h3>
+                <p class="creator">por @SpaceMex</p>
+                <a href="https://youtu.be/Y-2qkGVirM4" target="_blank" class="btn-card neon">Ver contenido</a>
+              </div>
+            </div>
 
-    <div class="carousel-wrapper">
-      <button class="carousel-btn prev" aria-label="Anterior">‹</button>
-      <div class="carousel-track" id="carouselTrack">
-        <!-- Tarjetas dinámicas -->
-        <div class="card">
-          <div class="card-media">
-            <img src="https://placehold.co/360x200/0a192f/00f7ff?text=Video+1" alt="Entrevista con el Dr. Neri Vela">
-            <div class="play-overlay">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
+            <div class="card">
+              <div class="card-media">
+                <img src="https://placehold.co/360x200/0c243e/ff00e6?text=Aliado+2" alt="¿Cómo ser astronauta en México?">
+                <div class="play-overlay">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>¿Cómo ser astronauta en México?</h3>
+                <p class="creator">por @CienciaGuerrero</p>
+                <a href="https://youtu.be/K6UxIBahF_E" target="_blank" class="btn-card neon">Ver contenido</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-media">
+                <img src="https://placehold.co/360x200/100e2a/00ffcc?text=Divulga+3" alt="El legado espacial de Guerrero">
+                <div class="play-overlay">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>El legado espacial de Guerrero</h3>
+                <p class="creator">por @KarlaCalleja</p>
+                <a href="https://youtu.be/OOzGtD8MFS0" target="_blank" class="btn-card neon">Ver contenido</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-media">
+                <img src="https://placehold.co/360x200/1a1a3c/ff5733?text=Aliado+4" alt="Animación: Misión Morelos">
+                <div class="play-overlay">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>Animación: Misión Morelos</h3>
+                <p class="creator">por SPACE TECH LABS</p>
+                <a href="https://youtu.be/ghi012" target="_blank" class="btn-card neon">Ver contenido</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-media">
+                <img src="https://placehold.co/360x200/0d1b33/7e00ff?text=TikTok+5" alt="¿Sabías que México fue el 5º país en órbita?">
+                <div class="play-overlay">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>¿Sabías que México fue el 5º país en órbita?</h3>
+                <p class="creator">por @TikTokDivulgador</p>
+                <a href="https://youtu.be/jkl345" target="_blank" class="btn-card neon">Ver contenido</a>
+              </div>
             </div>
           </div>
-          <div class="card-content">
-            <h3>Entrevista con el Dr. Neri Vela</h3>
-            <p class="creator">por @SpaceMex</p>
-            <a href="https://youtu.be/xyz123" target="_blank" class="btn-card neon">Ver contenido</a>
-          </div>
+          <button class="carousel-btn next" aria-label="Siguiente">›</button>
         </div>
 
-        <div class="card">
-          <div class="card-media">
-            <img src="https://placehold.co/360x200/0c243e/ff00e6?text=Aliado+2" alt="¿Cómo ser astronauta en México?">
-            <div class="play-overlay">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
-          </div>
-          <div class="card-content">
-            <h3>¿Cómo ser astronauta en México?</h3>
-            <p class="creator">por @CienciaGuerrero</p>
-            <a href="https://youtu.be/abc456" target="_blank" class="btn-card neon">Ver contenido</a>
-          </div>
-        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </section>
 
-        <div class="card">
-          <div class="card-media">
-            <img src="https://placehold.co/360x200/100e2a/00ffcc?text=Divulga+3" alt="El legado espacial de Guerrero">
-            <div class="play-overlay">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
-          </div>
-          <div class="card-content">
-            <h3>El legado espacial de Guerrero</h3>
-            <p class="creator">por @KarlaCalleja</p>
-            <a href="https://youtu.be/def789" target="_blank" class="btn-card neon">Ver contenido</a>
-          </div>
-        </div>
+    <!-- 🎥 TRAILERS -->
+    <section id="trailers" class="trailers-section">
+      <div class="container">
+        <h2 class="section-title">🎥 Trailers Oficiales</h2>
 
-        <div class="card">
-          <div class="card-media">
-            <img src="https://placehold.co/360x200/1a1a3c/ff5733?text=Aliado+4" alt="Animación: Misión Morelos">
-            <div class="play-overlay">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
+        <div class="trailers-grid">
+          <!-- Trailer 1 -->
+          <div class="trailer-card">
+            <div class="trailer-wrapper">
+              <span class="trailer-label">ESTRENO</span>
+              <iframe 
+                class="trailer-iframe" 
+                src="https://www.youtube.com/embed/Y-2qkGVirM4"
+                title="Trailer Oficial"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="card-footer">
+              <div class="card-title">Trailer Oficial</div>
+              <div class="card-desc">El viaje de Rodolfo Neri Vela, desde Guerrero hasta el espacio.</div>
             </div>
           </div>
-          <div class="card-content">
-            <h3>Animación: Misión Morelos</h3>
-            <p class="creator">por SPACE TECH LABS</p>
-            <a href="https://youtu.be/ghi012" target="_blank" class="btn-card neon">Ver contenido</a>
-          </div>
-        </div>
 
-        <div class="card">
-          <div class="card-media">
-            <img src="https://placehold.co/360x200/0d1b33/7e00ff?text=TikTok+5" alt="¿Sabías que México fue el 5º país en órbita?">
-            <div class="play-overlay">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
+          <!-- Trailer 2 -->
+          <div class="trailer-card">
+            <div class="trailer-wrapper">
+              <span class="trailer-label">DETALLES</span>
+              <iframe 
+                class="trailer-iframe" 
+                src="https://www.youtube.com/embed/K6UxIBahF_E"
+                title="Detrás de Cámaras"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="card-footer">
+              <div class="card-title">Detrás de Cámaras</div>
+              <div class="card-desc">El making-of del documental con testimonios exclusivos.</div>
             </div>
           </div>
-          <div class="card-content">
-            <h3>¿Sabías que México fue el 5º país en órbita?</h3>
-            <p class="creator">por @TikTokDivulgador</p>
-            <a href="https://youtu.be/jkl345" target="_blank" class="btn-card neon">Ver contenido</a>
+
+          <!-- Trailer 3 -->
+          <div class="trailer-card">
+            <div class="trailer-wrapper">
+              <span class="trailer-label">INSPIRACIÓN</span>
+              <iframe 
+                class="trailer-iframe" 
+                src="https://www.youtube.com/embed/OOzGtD8MFS0"
+                title="Trailer Inspiracional"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="card-footer">
+              <div class="card-title">Jóvenes al Espacio</div>
+              <div class="card-desc">Cómo Neri Vela inspira a nuevas generaciones en Guerrero y México.</div>
+            </div>
           </div>
         </div>
       </div>
-      <button class="carousel-btn next" aria-label="Siguiente">›</button>
-    </div>
-
-    <div class="carousel-dots" id="carouselDots"></div>
-  </div>
-</section>
-
-    <!-- 🎬 TRAILERS -->
-  <section class="trailers-section">
-    <div class="stars" id="stars"></div>
-    <h2 class="section-title">NERI VELA: ESPACIO SIN LÍMITES</h2>
-
-    <div class="trailers-grid">
-      <!-- Teaser 1 -->
-      <div class="trailer-card">
-        <div class="video-container">
-          <iframe 
-            class="trailer-iframe" 
-            src="https://www.youtube.com/embed/Y-2qkGVirM4?enablejsapi=1&modestbranding=1&rel=0&origin=https://neriveladoc.com"
-            title="Neri Vela Espacio Sin Límites: Teaser 1"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            loading="lazy">
-          </iframe>
-          <div class="fallback" onclick="window.open('https://youtu.be/Y-2qkGVirM4', '_blank')">
-            <img class="fallback-img" src="https://i.ytimg.com/vi/Y-2qkGVirM4/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/Y-2qkGVirM4/hqdefault.jpg'">
-            <div class="play-btn">▶</div>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-title">Teaser 1</div>
-          <div class="card-desc">Primer vistazo al documental.</div>
-        </div>
-      </div>
-
-      <!-- Teaser 2 -->
-      <div class="trailer-card">
-        <div class="video-container">
-          <iframe 
-            class="trailer-iframe" 
-            src="https://www.youtube.com/embed/K6UxIBahF_E?enablejsapi=1&modestbranding=1&rel=0&origin=https://neriveladoc.com"
-            title="Neri Vela Espacio Sin Límites: Teaser 2"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            loading="lazy">
-          </iframe>
-          <div class="fallback" onclick="window.open('https://youtu.be/K6UxIBahF_E', '_blank')">
-            <img class="fallback-img" src="https://i.ytimg.com/vi/K6UxIBahF_E/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/K6UxIBahF_E/hqdefault.jpg'">
-            <div class="play-btn">▶</div>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-title">Teaser 2</div>
-          <div class="card-desc">La misión continúa.</div>
-        </div>
-      </div>
-
-      <!-- Trailer Oficial -->
-      <div class="trailer-card">
-        <div class="video-container">
-          <iframe 
-            class="trailer-iframe" 
-            src="https://www.youtube.com/embed/OOzGtD8MFS0?enablejsapi=1&modestbranding=1&rel=0&origin=https://neriveladoc.com"
-            title="Trailer Oficial Neri Vela Espacio Sin Límites"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            loading="lazy">
-          </iframe>
-          <div class="fallback" onclick="window.open('https://youtu.be/OOzGtD8MFS0', '_blank')">
-            <img class="fallback-img" src="https://i.ytimg.com/vi/OOzGtD8MFS0/maxresdefault.jpg" onerror="this.src='https://i.ytimg.com/vi/OOzGtD8MFS0/hqdefault.jpg'">
-            <div class="play-btn">▶</div>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="card-title">Trailer Oficial</div>
-          <div class="card-desc">El viaje del primer astronauta mexicano.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
     <!-- ✉️ REGÍSTRATE -->
-    <section class="section" id="registro">
+    <section id="registro" class="section">
       <div class="container">
         <h2>Regístrate para Acceso Exclusivo</h2>
         <p>Recibe actualizaciones, contenido anticipado y acceso a eventos virtuales.</p>
@@ -419,14 +418,15 @@
     <footer>
       <div class="container">
         <p>&copy; 2025 SPACE TECH LABS • Documental oficial autorizado</p>
-        <p>En colaboración con la Agencia Espacial Mexicana y UPIICSA</p>
+        <p>En colaboración con el Director Ricardo Arnaiz</p>
       </div>
     </footer>
 
   </main>
 
-  <!-- 🧠 Lógica: animar intro → ocultar → mostrar contenido -->
+  <!-- 🧠 LÓGICA -->
   <script src="/js/intro.js"></script>
-    <script src="/js/main.js"></script>
+  <script src="/js/main.js"></script>
+
 </body>
-</html
+</html>
