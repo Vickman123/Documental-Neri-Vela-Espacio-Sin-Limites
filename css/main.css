@@ -173,139 +173,743 @@ footer .container p {
   .section { padding: 60px 15px; }
 }
 
-/* 🌌 HERO CINEMATOGRÁFICO — estilo épico */
-.hero-cinematic {
+/* 🌌 HERO PRINCIPAL — Neri Vela: Espacio Sin Límites */
+.hero-section {
+  width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  padding: 2rem;
   overflow: hidden;
-  background: 
-    url('/img/Wallpaper.png') 
-    no-repeat center center;
+}
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url('/img/Hero.png') center center no-repeat;
   background-size: cover;
-}
-
-.hero-cinematic .stars {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.hero-cinematic .star {
-  position: absolute;
-  background: #fff;
-  border-radius: 50%;
-  animation: twinkle-hero 3s infinite ease-in-out;
-}
-
-@keyframes twinkle-hero {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
-}
-
-.hero-content {
-  text-align: center;
-  z-index: 2;
-  max-width: 900px;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5% 10%;
+  box-sizing: border-box;
 }
 
-.main-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 8vw, 5rem);
+.hero-text {
+  max-width: 50%;
+  z-index: 10;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.8rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+  /* 🔵 Neón azul intenso (SpaceX / Interstellar style) */
+  color: #fff;
   text-shadow: 
+    0 0 5px #0ff,
     0 0 10px #0ff,
     0 0 20px #0ff,
     0 0 30px #0ff,
-    0 0 40px #00f,
-    0 0 50px #00f;
-  font-weight: 700;
-  letter-spacing: 1px;
-  animation: fadeInFromSpace 3s ease-out forwards;
-  margin-bottom: 1rem;
+    0 0 40px #0ff,
+    0 0 50px #0ff;
+  letter-spacing: -1px;
 }
 
-.subtitle {
-  font-family: 'Lato', sans-serif;
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  line-height: 1.6;
-  opacity: 0;
-  animation: fadeInUp 2s ease-out 1s forwards;
-  margin-bottom: 1.5rem;
-  font-weight: 300;
-}
-
-.credits {
-  font-family: 'Lato', sans-serif;
-  font-size: clamp(0.8rem, 2vw, 1rem);
-  opacity: 0;
-  animation: fadeInUp 2s ease-out 1.5s forwards;
-  font-weight: 300;
-  letter-spacing: 1px;
-  margin-top: 1rem;
-}
-
-.credits strong {
-  font-weight: 700;
-  color: #0ff;
-}
-
-.btn-hero {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 14px 36px;
-  background: rgba(0, 0, 0, 0.5);
-  color: #0ff;
-  text-decoration: none;
-  border: 1px solid #0ff;
-  border-radius: 50px;
-  font-family: 'Lato', sans-serif;
-  font-weight: bold;
+.hero-text p {
+  font-family: 'Segoe UI', sans-serif;
   font-size: 1.1rem;
-  backdrop-filter: blur(5px);
-  transition: all 0.3s;
+  margin: 0.5rem 0;
+  line-height: 1.6;
+  color: #e0e0e0;
+  text-shadow: 0 0 3px rgba(0,0,0,0.7);
 }
 
-.btn-hero:hover {
-  background: rgba(0, 40, 80, 0.7);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  transform: translateY(-3px);
+.hero-text .director {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-top: 1.5rem;
+  font-style: italic;
+  color: #ccc;
+  text-shadow: 0 0 2px rgba(0,0,0,0.5);
 }
 
-/* Animaciones */
-@keyframes fadeInFromSpace {
-  0% {
+.hero-text .highlight {
+  color: #0ff;
+  font-weight: 600;
+}
+
+/* 🛰 SHUTTLE DEL HERO — nombre único para evitar conflicto con intro */
+.hero-shuttle {
+  position: absolute;
+  right: -10%;  /* ✅ CORREGIDO: antes era -30% → causaba superposición */
+  top: 15%;
+  width: 55%;
+  max-width: 850px;
+  z-index: 5;
+  animation: 
+    flyIn 2s ease-out forwards, 
+    float 3s ease-in-out infinite 1.5s;
+}
+
+@keyframes flyIn {
+  from {
+    right: -10%;       /* ✅ Inicia más cerca */
     opacity: 0;
-    transform: translateZ(-600px) rotateY(10deg) scale(0.8);
+    transform: translateX(30px);
   }
-  80% {
-    opacity: 0.8;
-    transform: translateZ(0) rotateY(0) scale(1.05);
-  }
-  100% {
+  to {
+    right: 5%;         /* ✅ Termina con margen al texto */
     opacity: 1;
-    transform: translateZ(0) rotateY(0) scale(1);
+    transform: translateX(0);
   }
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .hero-text { max-width: 60%; }
+  .hero-text h1 { font-size: 3.2rem; }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    padding: 8% 5%;
+    text-align: center;
+    justify-content: center;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  .hero-text {
+    max-width: 100%;
+    margin-bottom: 2.2rem;
   }
+
+  .hero-text h1 {
+    font-size: 2.6rem;
+    line-height: 1.2;
+  }
+
+  .hero-shuttle {
+    position: static;
+    width: 85%;
+    max-width: 380px;
+    margin: 1.5rem auto 0;
+    right: auto;
+    top: auto;
+    animation: 
+      flyInMobile 1.0s ease-out forwards,
+      float 4s ease-in-out infinite 0.8s;
+  }
+
+  @keyframes flyInMobile {
+    from {
+      transform: translateX(50%) scale(0.95); /* ✅ Suave entrada lateral */
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/* 🤝 SECCIÓN DE ALIADOS — Slider infinito */
+#aliados .container {
+  max-width: 1200px;
+}
+
+#aliados h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #1a237e;
+}
+
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+  height: 120px;
+  margin: 2rem auto 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  max-width: 1000px;
+}
+
+.slider::before,
+.slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(to right, 
+    rgba(255,255,255,1) 0%, 
+    rgba(255,255,255,0) 100%);
+}
+
+.slider::after {
+  right: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(220px * 10); /* 5 logos × 2 = 10 */
+  animation: scroll 30s linear infinite;
+}
+
+.slide {
+  height: 120px;
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide img {
+  max-height: 80px;
+  max-width: 180px;
+  object-fit: contain;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover: pausa + efecto */
+.slider:hover .slide-track {
+  animation-play-state: paused;
+}
+
+.slider .slide:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Animación */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-220px * 5)); } /* 5 logos únicos */
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .main-title { font-size: 3rem; }
-  .subtitle { font-size: 1.2rem; }
-} 
+  .slider {
+    height: 100px;
+  }
+  .slide {
+    width: 180px;
+  }
+  .slide img {
+    max-height: 60px;
+    max-width: 140px;
+  }
+  @keyframes scroll {
+    100% { transform: translateX(calc(-180px * 5)); }
+  }
+}
+
+/* 📣 SECCIÓN DE DIVULGADORES — Carousel con tarjetas flip */
+#divulgadores .container {
+  max-width: 1400px;
+}
+
+#divulgadores h2.section-title {
+  color: #0270e5;
+  text-shadow: 0 0 6px rgba(2, 112, 229, 0.3);
+  margin-bottom: 20px;
+}
+
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 25px;
+  padding: 10px 10px 30px;
+  scrollbar-width: thin;
+  scrollbar-color: #0270e5 #141414;
+}
+
+.carousel-container::-webkit-scrollbar {
+  height: 8px;
+}
+.carousel-container::-webkit-scrollbar-track { background: #141414; border-radius: 4px; }
+.carousel-container::-webkit-scrollbar-thumb { background: #0270e5; border-radius: 4px; }
+
+/* --- Tarjeta Flip --- */
+.flip-card-container {
+  flex: 0 0 220px;
+  height: 280px;
+  perspective: 1000px;
+  scroll-snap-align: start;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border: 3px solid #141414;
+  background: 
+    linear-gradient(135deg, #0000 18.75%, #f3f3f3 0 31.25%, #0000 0),
+    repeating-linear-gradient(45deg, #f3f3f3 -6.25% 6.25%, #141414 0 18.75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 0;
+  background-color: #141414;
+  box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+}
+
+.flip-card.flipped { transform: rotateY(180deg); }
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.flip-card-front {
+  overflow: hidden;
+  background: #000;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.flip-card-front .label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.85);
+  color: #0270e5;
+  font-size: 13px;
+  font-weight: 900;
+  text-align: center;
+  padding: 8px 0;
+  text-shadow: 0 0 4px rgba(2, 112, 229, 0.5);
+}
+
+.flip-card-front .label small {
+  font-weight: 700;
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.flip-card-back {
+  background: #fff;
+  color: #141414;
+  padding: 20px;
+  box-sizing: border-box;
+  transform: rotateY(180deg);
+  justify-content: flex-start;
+  text-align: center;
+  overflow: hidden;
+}
+
+.flip-card-back .back-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.flip-card-back .name {
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.flip-card-back .description {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #333;
+  flex-grow: 1;
+  margin: 0 0 15px;
+}
+
+/* === BOTONES DE REDES SOCIALES === */
+.socials-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.socialContainer {
+  width: 42px;
+  height: 42px;
+  background-color: #2c2c2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.containerOne:hover { background-color: #d62976; transform: scale(1.4); border-radius: 12px; }
+.containerTwo:hover { background-color: #00acee; transform: scale(1.4); border-radius: 12px; }
+.containerThree:hover { background-color: #0072b1; transform: scale(1.4); border-radius: 12px; }
+.containerFour:hover { background-color: #25d366; transform: scale(1.4); border-radius: 12px; }
+
+.socialContainer:active {
+  transform: scale(0.85);
+}
+
+.socialSvg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s;
+}
+
+.socialSvg path {
+  fill: white;
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .flip-card-container { flex: 0 0 180px; }
+  .section-title { font-size: 20px; }
+  .flip-card-front .label { font-size: 11px; }
+  .flip-card-back .name { font-size: 12px; }
+  .flip-card-back .description { font-size: 9px; }
+}
+
+/* 🎨 Estilos — integrables sin romper el resto */
+.content-showcase {
+  padding: 80px 20px;
+  background: #0a1128;
+  color: #e0e7ff;
+}
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.section-title {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  color: #a0b0d0;
+}
+
+/* 🌀 Neón azul suave (como pediste) */
+.neon-blue {
+  color: #fff;
+  text-shadow: 
+    0 0 5px #00f7ff,
+    0 0 10px #0088ff,
+    0 0 15px #0055aa;
+}
+
+/* 🎞️ Carousel */
+.carousel-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  padding: 10px 0;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+.card {
+  flex: 0 0 320px;
+  background: rgba(30, 40, 70, 0.6);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 120, 255, 0.25);
+}
+.card-media {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+}
+.card-media img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.play-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card:hover .play-overlay {
+  opacity: 1;
+}
+.play-overlay svg {
+  width: 56px; height: 56px;
+  fill: white;
+  filter: drop-shadow(0 0 8px rgba(0, 247, 255, 0.6));
+}
+
+.card-content {
+  padding: 20px;
+}
+.card h3 {
+  font-size: 1.3rem;
+  margin: 0 0 8px;
+  color: white;
+}
+.creator {
+  font-size: 0.9rem;
+  color: #7abaff;
+  margin: 0 0 16px;
+}
+.btn-card {
+  display: inline-block;
+  padding: 8px 20px;
+  background: transparent;
+  color: #00f7ff;
+  border: 1px solid #00f7ff;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.btn-card:hover {
+  background: #00f7ff;
+  color: #0a1128;
+  box-shadow: 0 0 12px rgba(0, 247, 255, 0.5);
+}
+/* Efecto neón al hover */
+.btn-card.neon:hover {
+  text-shadow: 0 0 6px #00f7ff;
+}
+
+/* ▶️ Botones de navegación */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px; height: 50px;
+  background: rgba(10, 17, 40, 0.7);
+  color: #00f7ff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s, transform 0.2s;
+}
+.carousel-btn:hover {
+  background: rgba(0, 30, 60, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+.prev { left: -20px; }
+.next { right: -20px; }
+
+/* ● Dots (opcionales) */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+}
+.carousel-dots button {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #445577;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.carousel-dots button.active {
+  background: #00f7ff;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .carousel-btn { display: none; } /* En móvil, solo swipe o dots */
+  .card { flex: 0 0 280px; }
+  .section-title { font-size: 2rem; }
+}
+    :root {
+      --neon-blue: #00f7ff;
+      --neon-purple: #b027ff;
+      --space-bg: #020814;
+      --card-bg: rgba(6, 16, 40, 0.7);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--space-bg);
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      overflow-x: hidden;
+    }
+    .trailers-section {
+      min-height: 100vh;
+      padding: 4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .stars {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;
+    }
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 3rem;
+      background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 12px rgba(0,247,255,0.4);
+      animation: fadeIn 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn { to { opacity: 1; } }
+    .trailers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1300px;
+      width: 100%;
+    }
+    .trailer-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(0, 180, 255, 0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.4s ease;
+      position: relative;
+      opacity: 0;
+    }
+    .trailer-card:nth-child(1) { animation: slideIn 0.6s ease-out 0.2s forwards; }
+    .trailer-card:nth-child(2) { animation: slideIn 0.6s ease-out 0.4s forwards; }
+    .trailer-card:nth-child(3) { animation: slideIn 0.6s ease-out 0.6s forwards; }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(30px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 */
+      background: #000;
+    }
+    .trailer-iframe {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      border: none;
+      display: block;
+    }
+    .fallback {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      z-index: 2;
+      cursor: pointer;
+    }
+    .fallback-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7) contrast(1.1);
+    }
+    .play-btn {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--neon-blue);
+      font-size: 24px;
+      z-index: 3;
+      border: 2px solid var(--neon-blue);
+      box-shadow: 0 0 20px rgba(0, 247, 255, 0.6);
+      transition: all 0.3s;
+    }
+    .play-btn:hover {
+      transform: scale(1.1);
+      background: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 30px rgba(0, 247, 255, 0.9);
+    }
+    .card-footer {
+      padding: 1.2rem;
+      text-align: center;
+    }
+    .card-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+    .card-desc {
+      font-size: 0.95rem;
+      color: #aaa;
+    }
