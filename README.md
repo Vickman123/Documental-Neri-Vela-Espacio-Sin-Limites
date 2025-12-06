@@ -36,3 +36,17 @@ Este repositorio contiene el código fuente del sitio web oficial del documental
 ---
 
 ## 📂 Estructura del proyecto
+neri-vela-website/
+├── index.html # Página principal (único punto de entrada)
+├── /css/
+│ ├── intro.css # Animación de carga (Atlantis volando)
+│ └── main.css # Estilos globales + secciones (hero, aliados, trailers…)
+├── /js/
+│ ├── intro.js # Lógica de la intro (una sola ejecución)
+│ └── main.js # Interactividad: flip cards, carousel, scroll
+├── /img/
+│ ├── Hero.png # Fondo del hero
+│ ├── Atlantis.png # Imagen local del shuttle (intro)
+│ ├── Cabina.png # Imagen del shuttle (hero)
+│ └── /logos/ # Logos de aliados (UPIICSA, AEM, NASA, etc.)
+└── README.md
