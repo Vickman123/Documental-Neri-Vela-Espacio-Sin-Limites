@@ -3,13 +3,20 @@
   margin: 0; padding: 0; box-sizing: border-box;
 }
 
+/* 🌌 FONDO TÉCNICO ESPACIAL — en toda la página */
 body {
+  background-color: #0a0a0a; /* Más oscuro que #111111 para contraste */
+  background-image: 
+    linear-gradient(32deg, rgba(8, 8, 8, 0.74) 30px, transparent),
+    radial-gradient(circle at 10% 20%, rgba(0, 50, 100, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(0, 150, 255, 0.08) 0%, transparent 50%);
+  background-size: 60px 60px, 100% 100%, 100% 100%;
+  background-position: -5px -5px, center, center;
+  background-repeat: repeat, no-repeat, no-repeat;
+  color: white;
   font-family: 'Segoe UI', system-ui, sans-serif;
-  line-height: 1.6;
-  color: #333;
   overflow-x: hidden;
 }
-
 .hidden {
   display: none;
 }
@@ -59,7 +66,7 @@ body {
   padding: 80px 20px;
 }
 .container {
-  max-width: 1200px;
+  max-width: 1800px;
   margin: 0 auto;
 }
 .section h2 {
@@ -619,13 +626,9 @@ footer .container p {
 /* 🎨 Estilos — integrables sin romper el resto */
 .content-showcase {
   padding: 80px 20px;
-  background: #0a1128;
   color: #e0e7ff;
 }
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-}
+
 .section-title {
   font-size: 2.4rem;
   text-align: center;
@@ -913,3 +916,434 @@ footer .container p {
       font-size: 0.95rem;
       color: #aaa;
     }
+
+/* 🌟 Fondo estrellado dinámico */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* 🎨 NEÓN AZUL */
+.neon-blue {
+  color: #fff;
+  text-shadow: 
+    0 0 5px #00f7ff,
+    0 0 10px #0088ff,
+    0 0 15px #0055aa;
+}
+
+/* 🌌 SECCIÓN TRAILERS — FONDO ESTRELLADO */
+.trailers-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.trailers-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(ellipse at top, transparent 0%, rgba(2, 8, 20, 0.9) 100%);
+  z-index: -2;
+}
+
+.trailers-section .stars {
+  z-index: -1;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+  letter-spacing: 2px;
+  animation: fadeInTitle 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInTitle {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.trailers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.trailer-card {
+  background: rgba(4, 12, 32, 0.7);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 200, 255, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.trailer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 247, 255, 0.3), 0 0 20px rgba(176, 39, 255, 0.2);
+  z-index: 10;
+}
+
+.trailer-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 */
+  width: 100%;
+  background: #000;
+}
+
+.trailer-iframe {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  border: none;
+  opacity: 0.92;
+  transition: opacity 0.3s;
+}
+
+.trailer-card:hover .trailer-iframe {
+  opacity: 1;
+}
+
+.trailer-label {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--neon-blue);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  z-index: 2;
+  border: 1px solid var(--neon-blue);
+  box-shadow: 0 0 12px rgba(0, 247, 255, 0.5);
+}
+
+.card-footer {
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+/* Animación de entrada */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.trailer-card:nth-child(1) { animation: slideInUp 0.6s ease-out 0.3s forwards; opacity: 0; }
+.trailer-card:nth-child(2) { animation: slideInUp 0.6s ease-out 0.5s forwards; opacity: 0; }
+.trailer-card:nth-child(3) { animation: slideInUp 0.6s ease-out 0.7s forwards; opacity: 0; }
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .title { font-size: 2.2rem; }
+  .trailer-card:hover { transform: none; }
+  .hero-text h1 { font-size: 2.6rem; }
+  .hero-shuttle { width: 85%; max-width: 400px; margin: 2rem auto 0; }
+}
+
+/* ==========================================================================
+   🔷 SECCIÓN SINOPSIS — FULL SCREEN + ESPACIO VISUAL + COHERENTE CON TU DISEÑO
+   — Corrige el "apretado" → ahora respira, ocupa toda la pantalla y se ve profesional
+   — ✅ Sin romper tu tema. Usa tus variables y estilos.
+   ========================================================================== */
+
+.synopsis-section {
+  width: 100vw;
+  min-height: 100vh;
+  /* ✅ Padding generoso para que no se pegue a los bordes */
+  padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 4vw, 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  background-image: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* ✅ Overlay sutil para mejorar contraste sobre fondo estelar */
+.synopsis-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+/* ===== GRID LAYOUT — AHORA EN 3 COLUMNAS ===== */
+.synopsis-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Móvil: una columna */
+  gap: clamp(2rem, 5vw, 3rem);
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .synopsis-grid {
+    grid-template-columns: 2fr 4fr 3fr; /* Proporción: Poster | Sinopsis | Datos */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+}
+
+/* ===== POSTER CARD — AJUSTADO PARA QUE NO SE VEA PEQUEÑO ===== */
+.poster-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.poster-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.poster-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(0, 180, 255, 0.15);
+}
+
+.poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.05) saturate(0.95);
+  transition: transform 0.6s ease-out;
+}
+
+.poster-card:hover .poster-img {
+  transform: scale(1.03);
+}
+
+.poster-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(2, 8, 20, 0.4), transparent);
+  pointer-events: none;
+}
+
+.poster-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(0, 120, 255, 0.15);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .genres {
+    justify-content: flex-start;
+  }
+}
+
+.genre-tag {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: #8899bb;
+  border: 1px solid rgba(100, 130, 200, 0.2);
+  padding: 0.25rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(6, 16, 40, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+/* ===== CONTENT CARD — AJUSTADO PARA QUE EL TEXTO RESPIRE ===== */
+.content-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s,
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+.content-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.highlight-title {
+  font-family: 'Orbitron', 'Arial Black', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  color: white;
+  text-shadow: 
+    0 0 6px var(--neon-blue),
+    0 0 12px rgba(0, 247, 255, 0.7),
+    0 0 20px rgba(0, 120, 255, 0.5);
+}
+
+.subtitle {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  color: #a0b0d0;
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.synopsis-text,
+.synopsis-secondary {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: clamp(1rem, 2.8vw, 1.2rem);
+  line-height: 1.75;
+  font-weight: 300;
+  margin: 1.25rem 0;
+  text-align: justify;
+}
+
+.synopsis-text {
+  color: #e0e7ff;
+}
+
+.synopsis-secondary {
+  color: #a0b0d0;
+}
+
+blockquote {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #c0d4ff;
+  border-left: 3px solid var(--neon-blue);
+  background: rgba(6, 16, 40, 0.25);
+  border-radius: 0 8px 8px 0;
+}
+
+.footer-bar {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(100, 130, 200, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rating {
+  text-align: center;
+}
+
+.rating-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #7788aa;
+  margin-bottom: 0.3rem;
+}
+
+.rating-score {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  color: white;
+  text-shadow: 0 0 8px var(--neon-blue);
+}
+
+.rating-scale {
+  font-size: 0.9rem;
+  color: #7788aa;
+}
+
+/* ✅ RESPONSIVO — EN MÓVIL, PADDING Y GAPS MÁS GENEROSOS */
+@media (max-width: 768px) {
+  .synopsis-section {
+    padding: 4rem 2rem;
+  }
+  .highlight-title {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  .synopsis-grid {
+    gap: 2rem;
+  }
+  .poster-wrapper {
+    aspect-ratio: 3 / 4; /* Más cuadrado en móvil */
+  }
+  blockquote {
+    font-size: 1.1rem;
+    padding-left: 1.2rem;
+  }
+}
