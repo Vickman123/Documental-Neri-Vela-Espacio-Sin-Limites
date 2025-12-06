@@ -69,12 +69,7 @@ body {
   max-width: 1800px;
   margin: 0 auto;
 }
-.section h2 {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-  color: #1a237e;
-}
+
 
 /* 🤝 ALIADOS */
 .logos-grid {
@@ -330,13 +325,6 @@ footer .container p {
 /* 🤝 SECCIÓN DE ALIADOS — Slider infinito */
 #aliados .container {
   max-width: 1200px;
-}
-
-#aliados h2 {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-  color: #1a237e;
 }
 
 .slider {
@@ -1346,4 +1334,20 @@ blockquote {
     font-size: 1.1rem;
     padding-left: 1.2rem;
   }
+}
+/* ✅ Slider con glow neón al pasar el mouse */
+#aliados .slider:hover {
+  box-shadow: 
+    0 0 0 2px rgba(0, 247, 255, 0.2),
+    0 0 20px rgba(0, 120, 255, 0.15);
+  border-radius: 12px;
+}
+
+#aliados .slide img {
+  transition: filter 0.3s, transform 0.3s;
+}
+
+#aliados .slide:hover img {
+  filter: brightness(1.1) saturate(1.2);
+  transform: scale(1.03);
 }
