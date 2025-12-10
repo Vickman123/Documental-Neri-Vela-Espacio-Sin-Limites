@@ -116,3 +116,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+/**
+ * 👨‍🚀 Sección Tripulación — Estrellas y efectos
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  // ✅ Generar estrellas de fondo (solo si no existen ya)
+  if (document.querySelector('.stars-container')) return;
+
+  const starsContainer = document.createElement('div');
+  starsContainer.className = 'stars-container';
+  document.body.prepend(starsContainer);
+
+  // Crear estrellas
+  for (let i = 0; i < 120; i++) {
+    const star = document.createElement('div');
+    star.style.position = 'absolute';
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.width = `${Math.random() * 2 + 0.5}px`;
+    star.style.height = star.style.width;
+    star.style.backgroundColor = 'white';
+    star.style.borderRadius = '50%';
+    star.style.opacity = Math.random() * 0.8 + 0.2;
+    star.style.animation = `twinkle ${Math.random() * 5 + 2}s infinite alternate`;
+    starsContainer.appendChild(star);
+  }
+
+  // Añadir animación CSS si no existe
+  if (!document.getElementById('stars-animation')) {
+    const style = document.createElement('style');
+    style.id = 'stars-animation';
+    style.textContent = `
+      @keyframes twinkle {
+        0% { opacity: 0.2; }
+        50% { opacity: 1; }
+        100% { opacity: 0.2; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+});
